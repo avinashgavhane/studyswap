@@ -1,0 +1,47 @@
+## =====================================
+## Visual Studio & ASP.NET .gitignore
+## =====================================
+
+# Visual Studio temporary files and caches
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build Results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+dist/
+
+# NuGet Packages directory (restore automatically via Visual Studio)
+packages/
+*.nupkg
+
+# DotNetCompilerPlatform Roslyn binary cache
+App_Readme/
+roslyn/
+
+# User-specific project options
+*.csproj.user
+*.vbproj.user
+*.fsproj.user
+
+# Local database, archive, and log files
+*.mdf
+*.ldf
+*.log
+*.tmp
+*.bak
+*.zip
+*.7z
+*.rar
+
+# IIS Express personal logs & config overrides
+.iisexpress/
+*.iisexpress

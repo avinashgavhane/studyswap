@@ -1,0 +1,311 @@
+﻿/* =========================
+   GLOBAL
+   ========================= */
+
+body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.register-container {
+    min-height: 100vh;
+    padding: 40px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================
+   CARD
+   ========================= */
+
+.register-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+.register-header {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #ffffff;
+    padding: 30px;
+    text-align: center;
+}
+
+.register-logo {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.register-header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.register-header p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* =========================
+   BODY
+   ========================= */
+
+.register-body {
+    padding: 30px;
+}
+
+/* =========================
+   PROGRESS STEPS
+   ========================= */
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.step {
+    text-align: center;
+    flex: 1;
+    position: relative;
+}
+
+    .step:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 16px;
+        right: -50%;
+        width: 100%;
+        height: 2px;
+        background: #dee2e6;
+    }
+
+    .step.active::after {
+        background: #667eea;
+    }
+
+.step-number {
+    width: 34px;
+    height: 34px;
+    background: #667eea;
+    color: #fff;
+    border-radius: 50%;
+    margin: auto;
+    line-height: 34px;
+    font-weight: 600;
+}
+
+.step-label {
+    font-size: 12px;
+    margin-top: 6px;
+    color: #555;
+}
+
+/* =========================
+   SECTION HEADER
+   ========================= */
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 6px;
+}
+
+.section-icon {
+    font-size: 20px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* =========================
+   FORM ELEMENTS
+   ========================= */
+
+.form-label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+}
+
+.required {
+    color: red;
+}
+
+.form-control,
+.form-select {
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+}
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 0.15rem rgba(102, 126, 234, 0.25);
+    }
+
+.help-text {
+    font-size: 12px;
+    color: #6c757d;
+}
+
+/* =========================
+   VALIDATION
+   ========================= */
+
+.field-validation-error {
+    font-size: 12px;
+    color: #dc3545;
+    margin-top: 4px;
+    display: block;
+}
+
+.validation-summary-errors {
+    background: #f8d7da;
+    color: #842029;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   SUCCESS MESSAGE
+   ========================= */
+
+.success-message {
+    background: #d1e7dd;
+    color: #0f5132;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.success-icon {
+    font-size: 22px;
+}
+
+/* =========================
+   FILE UPLOAD
+   ========================= */
+
+.file-upload-wrapper {
+    border: 2px dashed #ced4da;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+    .file-upload-wrapper.drag-over {
+        border-color: #667eea;
+        background: #f5f7ff;
+    }
+
+.form-control-file {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-upload-label {
+    color: #555;
+    font-size: 14px;
+}
+
+.file-name-display {
+    font-size: 13px;
+    margin-top: 6px;
+    display: none;
+}
+
+/* =========================
+   TERMS
+   ========================= */
+
+.custom-checkbox {
+    margin: 25px 0;
+    font-size: 13px;
+}
+
+.checkbox-label a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+    .checkbox-label a:hover {
+        text-decoration: underline;
+    }
+
+/* =========================
+   BUTTON
+   ========================= */
+
+.btn-register {
+    width: 100%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    color: #fff;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+    .btn-register:hover {
+        opacity: 0.9;
+    }
+
+/* =========================
+   LOGIN LINK
+   ========================= */
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+    .login-link a {
+        color: #667eea;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+    .register-body {
+        padding: 20px;
+    }
+
+    .progress-steps {
+        display: none;
+    }
+}

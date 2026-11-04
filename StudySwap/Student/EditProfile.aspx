@@ -1,0 +1,241 @@
+﻿<%@ Page Title="Edit Profile" Language="C#" MasterPageFile="~/Student/Student.Master"
+    AutoEventWireup="true" CodeBehind="EditProfile.aspx.cs"
+    Inherits="StudySwap.Student.EditProfile" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background: #f4f6f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            padding: 20px 25px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .profile-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 15px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .profile-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 3px solid white;
+            object-fit: cover;
+        }
+
+        .section-title {
+            font-weight: 700;
+            margin-top: 15px;
+            margin-bottom: 12px;
+            border-left: 4px solid #667eea;
+            padding-left: 8px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        .form-control, .form-select {
+            border-radius: 10px;
+            font-size: 0.9rem;
+            padding: 6px 10px;
+            height: 35px;
+        }
+
+        label.form-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .save-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 14px;
+            padding: 10px 30px;
+            font-weight: 700;
+            font-size: 1rem;
+            min-width: 160px;
+        }
+
+        .save-btn:hover { opacity: 0.9; }
+
+        .badge-status {
+            background: #198754;
+            font-size: 0.85rem;
+            padding: 0.25em 0.6em;
+        }
+
+        img.profile-img.mt-2 {
+            width: 90px !important;
+            height: 90px !important;
+            margin-top: 8px !important;
+            border-radius: 12px !important;
+        }
+
+        .text-center.mt-4 { margin-top: 20px !important; }
+
+        /* --- NEW: password section --- */
+        .password-divider {
+            margin: 22px 0 10px;
+            border-top: 1px dashed #d1d5db;
+        }
+        .pwd-msg {
+            font-size: 0.85rem;
+            margin-top: 6px;
+            display: block;
+        }
+        .pwd-msg.ok { color: #198754; }
+        .pwd-msg.err { color: #dc3545; }
+    </style>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+<div class="container py-4">
+    <div class="profile-card">
+
+        <!-- HEADER -->
+        <div class="profile-header d-flex align-items-center">
+            <asp:Image ID="imgHeaderProfile" runat="server" CssClass="profile-img me-4" />
+            <div>
+                <h4 class="mb-1">Edit Student Profile</h4>
+                <span class="badge badge-status">Verified Student</span>
+            </div>
+        </div>
+
+        <!-- BASIC INFO -->
+        <div class="section-title">Basic Information</div>
+
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label class="form-label">Full Name</label>
+                <asp:TextBox ID="txtFullName" runat="server" CssClass="form-control" />
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Email</label>
+                <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" ReadOnly="true" />
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Phone</label>
+                <asp:TextBox ID="txtPhone" runat="server" CssClass="form-control" />
+            </div>
+
+                        <div class="col-md-6">
+                <label class="form-label">Roll Number</label>
+                <asp:TextBox ID="txtRoll" runat="server" CssClass="form-control" />
+            </div>
+
+            <div class="col-12 mt-3">
+                <div class="p-3 rounded-3" style="background:#f0fdf4; border:1px solid #bbf7d0;">
+                    <div class="form-check form-switch mb-0">
+                        <asp:CheckBox ID="chkAllowWhatsApp" runat="server" CssClass="form-check-input" />
+                        <label class="form-check-label ms-2" for="chkAllowWhatsApp" style="font-weight:600; color:#166534;">
+                            <i class="bi bi-whatsapp" style="color:#25D366; font-size:16px;"></i> Allow WhatsApp Chat
+                        </label>
+                        <div class="text-muted small ms-4" style="color:#15803d !important;">
+                            Enable this to display a "Chat on WhatsApp" button on your listings so verified students can reach out to you directly.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ACADEMIC INFO -->
+        <div class="section-title">Academic Details</div>
+
+        <div class="row g-3">
+            <div class="col-md-4">
+                <label class="form-label">College</label>
+                <asp:DropDownList ID="ddlCollege" runat="server" CssClass="form-select" />
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Department</label>
+                <asp:DropDownList ID="ddlDepartment" runat="server" CssClass="form-select" />
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Year of Study</label>
+                <asp:DropDownList ID="ddlYear" runat="server" CssClass="form-select" />
+            </div>
+        </div>
+
+        <!-- PROFILE IMAGE -->
+        <div class="section-title">Images</div>
+
+        <div class="row g-3 align-items-center">
+            <div class="col-md-6 text-center">
+                <label class="form-label d-block">Profile Picture</label>
+                <asp:Image ID="imgProfile" runat="server" CssClass="profile-img mx-auto" Visible="false" />
+                <asp:FileUpload ID="fuProfile" runat="server" CssClass="form-control mt-2" />
+            </div>
+
+            <div class="col-md-6 text-center">
+                <label class="form-label d-block">Student ID Proof</label>
+                <asp:Image ID="imgIDProof" runat="server" CssClass="profile-img" Style="width:90px; height:auto;" Visible="false" />
+                <asp:FileUpload ID="fuIDProof" runat="server" CssClass="form-control mt-2" />
+            </div>
+        </div>
+
+        <!-- ================= NEW: CHANGE PASSWORD ================= -->
+        <div class="password-divider"></div>
+        <div class="section-title">Change Password</div>
+
+        <div class="row g-3">
+            <div class="col-12">
+                <label class="form-label">Current Password</label>
+                <asp:TextBox ID="txtCurrentPwd" runat="server" CssClass="form-control"
+                    TextMode="Password" placeholder="Enter current password" />
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">New Password</label>
+                <asp:TextBox ID="txtNewPwd" runat="server" CssClass="form-control"
+                    TextMode="Password" placeholder="Min 8 characters" />
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Confirm New Password</label>
+                <asp:TextBox ID="txtConfirmPwd" runat="server" CssClass="form-control"
+                    TextMode="Password" placeholder="Re-enter new password" />
+            </div>
+
+            <div class="col-12">
+                <asp:Button ID="btnChangePassword" runat="server"
+                    Text="Update Password"
+                    CssClass="btn save-btn"
+                    OnClick="btnChangePassword_Click" />
+                <asp:Label ID="lblPwdStatus" runat="server" CssClass="pwd-msg" Visible="false"></asp:Label>
+            </div>
+        </div>
+        <!-- ======================================================= -->
+
+        <!-- SAVE -->
+        <div class="text-center mt-4">
+            <asp:Button ID="btnSave" runat="server"
+                Text="Save Changes"
+                CssClass="btn save-btn" OnClick="btnSave_Click" />
+        </div>
+        <asp:Label ID="lblStatus" runat="server" Text="Label" Visible="false"></asp:Label>
+    </div>
+</div>
+
+</asp:Content>

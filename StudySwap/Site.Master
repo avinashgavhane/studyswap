@@ -1,0 +1,151 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="StudySwap.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudySwap</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link href="/css/styles.css" rel="stylesheet">
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="/Default.aspx">
+                <i class="bi bi-recycle fs-3 text-accent me-2"></i>
+                <div>
+                    <span class="fw-bold fs-4">StudySwap</span>
+                    <small class="d-block text-light fw-light">Sustainable Academic Marketplace</small>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Default.aspx">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="About.aspx">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact.aspx">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="authDropdown" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="/Login.aspx"><i class="bi bi-box-arrow-in-right me-2"></i>Login</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item btn-success" href="/Register.aspx"><i class="bi bi-box-arrow-in-right me-2"></i>Register</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+       <form id="form1" runat="server">
+    <!-- Main Content -->
+    <main class="flex-grow-1">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </main>
+    </form>
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="text-accent">StudySwap</h5>
+                    <p class="text-light">Connecting students for sustainable academic exchange. Save money, reduce waste, and build community.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-accent">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="Default.aspx" class="text-light text-decoration-none">Home</a></li>
+                        <li><a href="Contact.aspx" class="text-light text-decoration-none">About Us</a></li>
+                        <li><a href="Contact.aspx" class="text-light text-decoration-none">Contact</a></li>
+                        <li><a href="Login.aspx" class="text-light text-decoration-none">Login</a></li>
+                        <li><a href="Register.aspx" class="text-light text-decoration-none" style="color:black">Register</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-accent">Sustainability Stats</h5>
+                    <div class="row g-2">
+                        <div class="col-6">
+                            <div class="bg-success p-2 rounded text-center">
+                                <h6 class="mb-0 fw-bold" id="lblItemsReused">10,500+</h6>
+                                <small>Items Reused</small>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="bg-info p-2 rounded text-center">
+                                <h6 class="mb-0 fw-bold" id="lblCO2Saved">25.5K kg</h6>
+                                <small>CO₂ Saved</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 mb-4">
+                    <h5 class="text-accent">Contact Info</h5>
+                    <p class="text-light mb-1">
+                        <i class="bi bi-geo-alt me-2"></i>University Campus Area
+                    </p>
+                    <p class="text-light mb-1">
+                        <i class="bi bi-envelope me-2"></i>support@studyswap.edu
+                    </p>
+                    <p class="text-light mb-0">
+                        <i class="bi bi-phone me-2"></i>+91 98765 43210
+                    </p>
+                </div>
+            </div>
+            
+            <hr class="text-light">
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">© 2024 StudySwap. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-light text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-light text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="/js/main.js"></script>
+    
+    <asp:ContentPlaceHolder ID="scripts" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

@@ -1,0 +1,228 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Student.master.cs" Inherits="StudySwap.Student.Student" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>StudySwap - Student Portal</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="CSS/studentmaster.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+
+
+    <script>
+        // Highlight the current page in the sidebar
+        document.addEventListener('DOMContentLoaded', function () {
+            var currentPage = window.location.pathname.split('/').pop().toLowerCase();
+            if (!currentPage) currentPage = 'studentdashboard.aspx';
+
+            var links = document.querySelectorAll('.nav-menu a');
+            links.forEach(function (link) {
+                var href = link.getAttribute('href').split('/').pop().toLowerCase();
+                if (href === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+
+        <!-- Mobile toggle button -->
+        <button type="button" class="sidebar-toggle" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Mobile overlay -->
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <div class="main-wrapper">
+
+            <!-- ===== SIDEBAR ===== -->
+            <aside class="sidebar" id="sidebar">
+
+                <!-- Logo -->
+               
+
+                <!-- User card -->
+                <div class="user-card">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-info">
+                        <strong>
+                            <asp:Label ID="lblSidebarName" runat="server" Text="Student"></asp:Label>
+                        </strong>
+                        <span>Student</span>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav>
+
+                    <!-- ============ MAIN ============ -->
+                    <div class="nav-section">
+                        <div class="nav-section-title">Main</div>
+                        <ul class="nav-menu">
+                            <li>
+                                <a href="StudentDashboard.aspx">
+                                    <span class="nav-icon"><i class="fas fa-home"></i></span>
+                                    Dashboard
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- ============ SELLING ============ -->
+                    <div class="nav-section">
+                        <div class="nav-section-title">Selling</div>
+                        <ul class="nav-menu">
+                            <li>
+                                <a href="Listing.aspx">
+                                    <span class="nav-icon"><i class="fas fa-plus-circle"></i></span>
+                                    Create Selling Listing
+                                </a>
+                            </li>
+                            <li>
+                                <a href="MyListing.aspx">
+                                    <span class="nav-icon"><i class="fas fa-box-open"></i></span>
+                                    My Selling Listings
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ViewEarningDetails.aspx">
+                                    <span class="nav-icon"><i class="fas fa-coins"></i></span>
+                                    My Earnings
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- ============ BUYING ============ -->
+                    <div class="nav-section">
+                        <div class="nav-section-title">Buying</div>
+                        <ul class="nav-menu">
+                            <li>
+                                <a href="BrowseItems.aspx">
+                                    <span class="nav-icon"><i class="fas fa-search"></i></span>
+                                    Browse Items
+                                </a>
+                            </li>
+                            <li>
+                                <a href="PurchaseListing.aspx">
+                                    <span class="nav-icon"><i class="fas fa-cart-plus"></i></span>
+                                    Create Purchase Request
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ViewPurchaseRequestReaction.aspx">
+                                    <span class="nav-icon"><i class="fas fa-clipboard-list"></i></span>
+                                    My Purchase Requests
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ViewAllPurchaseRequest.aspx">
+                                    <span class="nav-icon"><i class="fas fa-bullhorn"></i></span>
+                                    All Purchase Requests
+                                </a>
+                            </li>
+                            <li>
+                                <a href="MyRequests.aspx">
+                                    <span class="nav-icon"><i class="fas fa-exchange-alt"></i></span>
+                                    My Sent Requests
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- ============ PAYMENTS ============ -->
+                    <div class="nav-section">
+                        <div class="nav-section-title">Payments</div>
+                        <ul class="nav-menu">
+                            <li>
+                                <a href="PaymentHistory.aspx">
+                                    <span class="nav-icon"><i class="fas fa-receipt"></i></span>
+                                    Payment History
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- ============ ACCOUNT ============ -->
+                    <div class="nav-section">
+                        <div class="nav-section-title">Account</div>
+                        <ul class="nav-menu">
+                            <li>
+                                <a href="EditProfile.aspx">
+                                    <span class="nav-icon"><i class="fas fa-user"></i></span>
+                                    My Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Complains.aspx">
+                                    <span class="nav-icon"><i class="fas fa-flag"></i></span>
+                                    Complaints
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../Default.aspx" class="logout-link">
+                                    <span class="nav-icon"><i class="fas fa-sign-out-alt"></i></span>
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </nav>
+            </aside>
+
+            <!-- ===== MAIN CONTENT ===== -->
+            <div class="main-content">
+
+                <header class="page-header">
+                    <div class="welcome-text">
+                        Welcome back, <strong>
+                            <asp:Label ID="lblname" runat="server" Text="Student"></asp:Label>
+                        </strong> 👋
+                    </div>
+                    <div class="header-actions">
+                        <a href="Listing.aspx" class="btn btn-primary"
+                            style="padding: 8px 16px; background: linear-gradient(135deg, #4f46e5, #06b6d4); color: #fff; border-radius: 10px; text-decoration: none; font-size: 0.82rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+                            <i class="fas fa-plus"></i> Sell Item
+                        </a>
+                    </div>
+                </header>
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    <!-- Page-specific content goes here -->
+                </asp:ContentPlaceHolder>
+
+                <footer>
+                    © 2026 StudySwap — Buy, Sell &amp; Exchange Study Materials
+                </footer>
+            </div>
+
+        </div>
+
+    </form>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            var overlay = document.querySelector('.sidebar-overlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
