@@ -7,6 +7,14 @@ namespace StudySwap
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.QueryString["action"] == "logout")
+            {
+                Session.Clear();
+                Session.Abandon();
+                Response.Redirect("~/Default.aspx");
+                return;
+            }
+
             // If the user is already logged in, redirect them directly to their dashboard
             if (Session["UserID"] != null)
             {

@@ -11,7 +11,16 @@ namespace StudySwap.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Admin"] == null)
+            {
+                Response.Redirect("~/Login.aspx");
+                return;
+            }
 
+            if (!IsPostBack)
+            {
+                lblAdminName.Text = Session["Admin"] != null ? Session["Admin"].ToString() : "Admin";
+            }
         }
     }
 }

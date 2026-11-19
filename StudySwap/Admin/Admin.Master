@@ -176,7 +176,7 @@
         </nav>
 
         <div class="logout-wrap">
-            <a href="../Default.aspx">
+            <a href="../Default.aspx?action=logout">
                 <i class="fas fa-sign-out-alt"></i>
                 <span>Logout</span>
             </a>

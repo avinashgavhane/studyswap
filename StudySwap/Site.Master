@@ -86,10 +86,10 @@
                     <h5 class="text-accent">Quick Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="Default.aspx" class="text-light text-decoration-none">Home</a></li>
-                        <li><a href="Contact.aspx" class="text-light text-decoration-none">About Us</a></li>
+                        <li><a href="About.aspx" class="text-light text-decoration-none">About Us</a></li>
                         <li><a href="Contact.aspx" class="text-light text-decoration-none">Contact</a></li>
                         <li><a href="Login.aspx" class="text-light text-decoration-none">Login</a></li>
-                        <li><a href="Register.aspx" class="text-light text-decoration-none" style="color:black">Register</a></li>
+                        <li><a href="Register.aspx" class="text-light text-decoration-none">Register</a></li>
                     </ul>
                 </div>
                 
