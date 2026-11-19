@@ -102,6 +102,81 @@
         }
         .pwd-msg.ok { color: #198754; }
         .pwd-msg.err { color: #dc3545; }
+    
+        /* --- WhatsApp Privacy Switch --- */
+        .wa-switch-card {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 14px;
+            padding: 14px 18px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            transition: all 0.2s ease;
+        }
+        .wa-switch-card:hover {
+            border-color: #86efac;
+            background: #ecfdf5;
+        }
+        .switch-toggle {
+            position: relative;
+            display: inline-block;
+            width: 48px;
+            height: 26px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            cursor: pointer;
+        }
+        .switch-toggle input[type="checkbox"] {
+            opacity: 0 !important;
+            width: 0 !important;
+            height: 0 !important;
+            position: absolute !important;
+            margin: 0 !important;
+            pointer-events: none !important;
+        }
+        .switch-toggle span.form-check-input,
+        .switch-toggle span:not(.switch-slider) {
+            border: none !important;
+            background: transparent !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            box-shadow: none !important;
+            display: contents !important;
+        }
+        .switch-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #cbd5e1;
+            transition: 0.25s ease;
+            border-radius: 26px;
+        }
+        .switch-slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.25s ease;
+            border-radius: 50%;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+        }
+        .switch-toggle input:checked + .switch-slider,
+        .switch-toggle input:checked ~ .switch-slider,
+        .switch-toggle:has(input:checked) .switch-slider {
+            background-color: #25D366;
+        }
+        .switch-toggle input:checked + .switch-slider:before,
+        .switch-toggle input:checked ~ .switch-slider:before,
+        .switch-toggle:has(input:checked) .switch-slider:before {
+            transform: translateX(22px);
+        }
     </style>
 </asp:Content>
 
@@ -143,19 +218,22 @@
                 <asp:TextBox ID="txtRoll" runat="server" CssClass="form-control" />
             </div>
 
-            <div class="col-12 mt-3">
-                <div class="p-3 rounded-3" style="background:#f0fdf4; border:1px solid #bbf7d0;">
-                    <div class="form-check form-switch mb-0">
-                        <asp:CheckBox ID="chkAllowWhatsApp" runat="server" CssClass="form-check-input" />
-                        <label class="form-check-label ms-2" for="chkAllowWhatsApp" style="font-weight:600; color:#166534;">
-                            <i class="bi bi-whatsapp" style="color:#25D366; font-size:16px;"></i> Allow WhatsApp Chat
+                        <div class="col-12 mt-3">
+                <div class="wa-switch-card">
+                    <label class="switch-toggle" for="chkAllowWhatsApp" title="Toggle WhatsApp Chat">
+                        <asp:CheckBox ID="chkAllowWhatsApp" runat="server" ClientIDMode="Static" />
+                        <span class="switch-slider"></span>
+                    </label>
+                    <div class="flex-grow-1">
+                        <label for="chkAllowWhatsApp" class="d-block mb-1" style="font-weight:600; color:#166534; cursor:pointer;">
+                            <i class="bi bi-whatsapp me-1" style="color:#25D366; font-size:1.15rem; vertical-align:middle;"></i> Allow WhatsApp Chat
                         </label>
-                        <div class="text-muted small ms-4" style="color:#15803d !important;">
+                        <div class="small" style="color:#15803d; line-height:1.4;">
                             Enable this to display a "Chat on WhatsApp" button on your listings so verified students can reach out to you directly.
                         </div>
                     </div>
                 </div>
-            </div>
+            </div></div>
         </div>
 
         <!-- ACADEMIC INFO -->
