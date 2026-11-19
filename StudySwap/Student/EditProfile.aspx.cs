@@ -66,10 +66,10 @@ namespace StudySwap.Student
 
             ddlYear.Items.Clear();
             ddlYear.Items.Add(new System.Web.UI.WebControls.ListItem("-- Select Year --", "0"));
-            for (int i = 1; i <= 5; i++)
-            {
-                ddlYear.Items.Add(i.ToString());
-            }
+            ddlYear.Items.Add(new System.Web.UI.WebControls.ListItem("1st Year", "1"));
+            ddlYear.Items.Add(new System.Web.UI.WebControls.ListItem("2nd Year", "2"));
+            ddlYear.Items.Add(new System.Web.UI.WebControls.ListItem("3rd Year", "3"));
+            ddlYear.Items.Add(new System.Web.UI.WebControls.ListItem("4th Year", "4"));
         }
 
         protected void LoadStudentData()
