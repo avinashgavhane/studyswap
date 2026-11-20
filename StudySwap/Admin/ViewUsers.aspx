@@ -326,16 +326,16 @@
                         </label>
                         <asp:DropDownList ID="ddlPurgeBatch" runat="server" CssClass="purge-select"
                             AutoPostBack="true" OnSelectedIndexChanged="ddlPurgeBatch_SelectedIndexChanged">
-                            <asp:ListItem Value="4" Selected="True">🎓 4th Year (Semesters 7 & 8) — Final Passout Batch</asp:ListItem>
-                            <asp:ListItem Value="3">📘 3rd Year (Semesters 5 & 6)</asp:ListItem>
-                            <asp:ListItem Value="2">📗 2nd Year (Semesters 3 & 4)</asp:ListItem>
-                            <asp:ListItem Value="1">📙 1st Year (Semesters 1 & 2)</asp:ListItem>
+                            <asp:ListItem Value="4" Selected="True">4th Year (Semesters 7 & 8) - Final Passout Batch</asp:ListItem>
+                            <asp:ListItem Value="3">3rd Year (Semesters 5 & 6)</asp:ListItem>
+                            <asp:ListItem Value="2">2nd Year (Semesters 3 & 4)</asp:ListItem>
+                            <asp:ListItem Value="1">1st Year (Semesters 1 & 2)</asp:ListItem>
                         </asp:DropDownList>
                     </div>
 
-                    <asp:Button ID="btnPurgeBatch" runat="server" Text="🗑️ Purge Entire Batch"
+                    <asp:Button ID="btnPurgeBatch" runat="server" Text="Purge Entire Batch"
                         CssClass="btn-purge" OnClick="btnPurgeBatch_Click"
-                        OnClientClick="return confirm('⚠️ CRITICAL WARNING: You are about to permanently delete ALL students in the selected cohort!\n\nThis will completely remove:\n• Student accounts and profiles\n• All their item listings and uploaded photos\n• Purchase/Listing requests and transaction history\n• Associated complaints and notifications\n\nThis action is PERMANENT and IRREVERSIBLE.\n\nAre you sure you want to proceed?');" />
+                        OnClientClick="return confirm('CRITICAL WARNING: You are about to permanently delete ALL students in the selected cohort!\n\nThis will completely remove:\n- Student accounts and profiles\n- All their item listings and uploaded photos\n- Purchase/Listing requests and transaction history\n- Associated complaints and notifications\n\nThis action is PERMANENT and IRREVERSIBLE.\n\nAre you sure you want to proceed?');" />
                 </div>
 
                 <div class="purge-info-strip">
@@ -355,14 +355,14 @@
                     <asp:DropDownList ID="ddlBatchFilter" runat="server" CssClass="filter-select"
                         AutoPostBack="true" OnSelectedIndexChanged="ddlBatchFilter_SelectedIndexChanged">
                         <asp:ListItem Value="" Selected="True">All Batches / Semesters</asp:ListItem>
-                        <asp:ListItem Value="4">🎓 4th Year (Passout Cohort • Sem 7-8)</asp:ListItem>
-                        <asp:ListItem Value="3">📘 3rd Year (Sem 5-6)</asp:ListItem>
-                        <asp:ListItem Value="2">📗 2nd Year (Sem 3-4)</asp:ListItem>
-                        <asp:ListItem Value="1">📙 1st Year (Sem 1-2)</asp:ListItem>
+                        <asp:ListItem Value="4">4th Year (Passout Cohort - Sem 7-8)</asp:ListItem>
+                        <asp:ListItem Value="3">3rd Year (Sem 5-6)</asp:ListItem>
+                        <asp:ListItem Value="2">2nd Year (Sem 3-4)</asp:ListItem>
+                        <asp:ListItem Value="1">1st Year (Sem 1-2)</asp:ListItem>
                     </asp:DropDownList>
 
                     <input type="text" id="txtSearch" class="search-input"
-                        placeholder="🔍 Search name, email, roll..." onkeyup="filterTable()" />
+                        placeholder="Search name, email, roll..." onkeyup="filterTable()" />
                 </div>
             </div>
 

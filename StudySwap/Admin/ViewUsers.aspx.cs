@@ -500,7 +500,7 @@ namespace StudySwap.Admin
         {
             switch (year)
             {
-                case 4: return "4th Year (Passout Cohort • Semesters 7 & 8)";
+                case 4: return "4th Year (Passout Cohort - Semesters 7 & 8)";
                 case 3: return "3rd Year (Semesters 5 & 6)";
                 case 2: return "2nd Year (Semesters 3 & 4)";
                 case 1: return "1st Year (Semesters 1 & 2)";
@@ -523,7 +523,7 @@ namespace StudySwap.Admin
             switch (yr)
             {
                 case 4:
-                    return "<span class='batch-badge batch-passout' title='Semesters 7 & 8 — Graduating / Passout Batch'><i class='fa-solid fa-graduation-cap'></i> 4th Yr (Passout)</span>";
+                    return "<span class='batch-badge batch-passout' title='Semesters 7 & 8 - Graduating / Passout Batch'><i class='fa-solid fa-graduation-cap'></i> 4th Yr (Passout)</span>";
                 case 3:
                     return "<span class='batch-badge batch-yr3' title='Semesters 5 & 6'><i class='fa-solid fa-book-bookmark'></i> 3rd Yr (Sem 5-6)</span>";
                 case 2:
