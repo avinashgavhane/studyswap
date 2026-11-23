@@ -90,8 +90,7 @@ Open `StudySwap/Web.config` and ensure the connection string points to your SQL 
 | Role | Email / Username | Password | Notes |
 | :--- | :--- | :--- | :--- |
 | **System Admin** | `admin@gmail.com` | `admin123` | Full access to Admin Dashboard, student approvals, and batch purge. |
-| **Verified Student (Demo)** | `demo@studyswap.com` | `demo123` | Aarav Sharma (3rd Year CSE, Roll: `CS-2024-001`). Pre-seeded with 5 listings and history. |
-| **Passout Student (4th Year)** | `avinashgavhane49@gmail.com` | `avinash123` | Avinash Gavhane (4th Year IT). Used to demonstrate the Passout Cohort Purge feature. |
+| **Verified Student (Demo)** | `demo@studyswap.com` | `demo123` | Aarav Sharma (3rd Year CSE, Roll: `CS-2024-001`). Pre-seeded with listings and transaction history. |
 
 ---
 
